@@ -1,7 +1,73 @@
-
-
 .media-controls {
-    width: 100%;
-    height: 100px;
-    flex:1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    padding: 10px;
+}
+
+.buttons svg rect,
+polyline,
+polygon {
+    stroke: white;
+    stroke-width: 0.8px;
+}
+
+.seek-bar {
+    position: relative;
+    padding: 10px;
+    color: white;
+    font-size: 13px;
+}
+
+.seek-bar .from {
+    position: absolute;
+    top: -15px;
+    left: 0;
+}
+
+.seek-bar .to {
+    position: absolute;
+    top: -15px;
+    right: 0;
+}
+.seek-bar .wrapper {
+    height: 5px;
+}
+
+.seek-bar .container {
+    background-color: rgb(47, 32, 32);
+    height: 5px;
+}
+
+.seek-bar .barCompleted {
+    background-color: rgb(216, 216, 216);
+    width: 80%;
+    height: 5px;
+}
+
+.seek-bar .label {
+    display: none !important;
+}
+
+.play {
+    order: 1;
+    width: 50px;
+}
+.next {
+    order: 2;
+    width: 20px;
+}
+.previous {
+    width: 20px;
+    order: 0;
+    transform: rotate(180deg);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    padding: 10px;
 }
