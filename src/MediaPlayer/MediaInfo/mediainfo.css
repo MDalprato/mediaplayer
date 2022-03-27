@@ -1,22 +1,23 @@
 .media-info {
-    width: 100%;
-    height: 100px;
     flex: 1;
     color: white;
     display: flex;
     flex-direction: row;
-    justify-content: left;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 10px;
 }
 
 .info {
     color: white;
     display: flex;
     flex-direction: column;
-    padding: 10px;
 }
 
 .share {
     color: white;
+    border: 1px solid green;
 }
 
 .info .title{
