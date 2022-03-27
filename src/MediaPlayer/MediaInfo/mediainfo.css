@@ -1,5 +1,28 @@
 .media-info {
     width: 100%;
     height: 100px;
-    flex:1;
+    flex: 1;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.info {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.share {
+    color: white;
+}
+
+.info .title{
+    font-size: 30px;
+}
+
+.info .artist{
+    font-size: 15px;
 }
