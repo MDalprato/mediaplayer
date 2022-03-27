@@ -1,10 +1,13 @@
-import React from 'react'
-import cover from './cover.png';
+import React, { useState } from 'react';
+import cover from '../../cover.png';
+import './albumcover.css';
 
 export default function AlbumCover() {
     return (
         <div className='album-cover'>
-            <img src={cover}></img>
+            <div className='cover'>
+                <img src={cover}></img>
+            </div>
         </div>
     )
 }
