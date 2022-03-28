@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './mediacontrols.css';
 import { GrPlay as Play } from 'react-icons/gr';
 import { GrStop as Stop } from 'react-icons/gr';
+import { GrPause as Pause } from 'react-icons/gr';
+
 import { GrNext as Next } from 'react-icons/gr';
 
 import RangeSlider from 'react-bootstrap-range-slider';
@@ -37,7 +39,6 @@ export default function MediaControls() {
 
     return (
 
-
         <div className='media-controls'>
             <div className='seek-bar'>
                 <ProgressBar
@@ -55,10 +56,11 @@ export default function MediaControls() {
             </div>
             <div className='buttons'>
 
-                <button onClick={toggle}>{playing ? "Pause" : "Play"}</button>
+                <span className='playPause' onClick={toggle}>
+                    {!playing ? <Play className='play' size={40} /> :
+                     <Pause className='stop' size={40} />}
+                </span>
 
-
-                <Play onClick={toggle} className='play' size={40} />
                 <Next className='next' size={40} />
                 <Next className='previous' size={40} />
             </div>

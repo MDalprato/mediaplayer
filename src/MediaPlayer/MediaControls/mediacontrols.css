@@ -9,7 +9,7 @@
 
 .buttons svg rect,
 polyline,
-polygon {
+polygon, path {
     stroke: white;
     stroke-width: 0.8px;
 }
@@ -49,7 +49,7 @@ polygon {
     display: none !important;
 }
 
-.play {
+.playPause {
     order: 1;
     width: 50px;
 }
