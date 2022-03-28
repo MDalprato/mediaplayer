@@ -41,10 +41,8 @@ polygon {
     height: 5px;
 }
 
-.seek-bar .barCompleted {
-    background-color: rgb(216, 216, 216);
-    width: 80%;
-    height: 5px;
+.seek-bar .container > div:first-of-type {
+    background-color: rgb(216, 216, 216) !important;
 }
 
 .seek-bar .label {
@@ -70,4 +68,38 @@ polygon {
     justify-content: space-evenly;
     flex-direction: row;
     padding: 10px;
+}
+
+.volume-slider {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100% !important;
+}
+
+input[type="range"] {
+    width: 100% !important;
+    -webkit-appearance: none;
+    height: 5px;
+    background: rgb(47, 32, 32);
+    background-image: linear-gradient(#fafafa, #ffe8e0);
+    background-size: 70% 100%;
+    background-repeat: no-repeat;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255) ;
+    cursor: ew-resize;
+    transition: background 0.3s ease-in-out;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
 }
