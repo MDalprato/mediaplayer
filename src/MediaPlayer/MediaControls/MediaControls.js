@@ -9,6 +9,7 @@ import { GrNext as Next } from 'react-icons/gr';
 import RangeSlider from 'react-bootstrap-range-slider';
 import ProgressBar from "@ramonak/react-progress-bar";
 import song from '../../song.mp3';
+import { TimeInfo } from './TimeInfo';
 
 const useAudio = url => {
     const [audio] = useState(new Audio(url));
@@ -26,7 +27,7 @@ const useAudio = url => {
             audio.removeEventListener('ended', () => setPlaying(false));
         };
     }, []);
-    return [playing, toggle];
+    return [playing, toggle, audio];
 };
 
 
@@ -34,8 +35,8 @@ export default function MediaControls() {
 
     const [seek, setSeek] = useState(60);
     const [volume, setVolume] = useState(20);
-
-    const [playing, toggle] = useAudio(song);
+    const [playing, toggle, audioRef] = useAudio(song);
+  
 
     return (
 
@@ -50,15 +51,17 @@ export default function MediaControls() {
                     //completedClassName="barCompleted"
                     labelClassName="label"
                 />
-                <div className='from'>00:00</div>
-                <div className='to'>03:00</div>
+                <TimeInfo
+                    audioRef={audioRef}
+                    playing={playing}
+                />
 
             </div>
             <div className='buttons'>
 
                 <span className='playPause' onClick={toggle}>
                     {!playing ? <Play className='play' size={40} /> :
-                     <Pause className='stop' size={40} />}
+                        <Pause className='stop' size={40} />}
                 </span>
 
                 <Next className='next' size={40} />
