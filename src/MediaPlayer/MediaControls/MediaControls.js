@@ -7,7 +7,6 @@ import { GrPause as Pause } from 'react-icons/gr';
 import { GrNext as Next } from 'react-icons/gr';
 
 import RangeSlider from 'react-bootstrap-range-slider';
-import ProgressBar from "@ramonak/react-progress-bar";
 import song from '../../song.mp3';
 import { TimeInfo } from './TimeInfo';
 
@@ -33,7 +32,6 @@ const useAudio = url => {
 
 export default function MediaControls() {
 
-    const [seek, setSeek] = useState(60);
     const [volume, setVolume] = useState(20);
     const [playing, toggle, audioRef] = useAudio(song);
   
@@ -42,15 +40,7 @@ export default function MediaControls() {
 
         <div className='media-controls'>
             <div className='seek-bar'>
-                <ProgressBar
-                    completed={seek}
-                    maxCompleted={100}
-                    height={5}
-                    className="wrapper"
-                    barContainerClassName="container"
-                    //completedClassName="barCompleted"
-                    labelClassName="label"
-                />
+ 
                 <TimeInfo
                     audioRef={audioRef}
                     playing={playing}
