@@ -34,13 +34,26 @@ export default function MediaControls() {
 
     const [volume, setVolume] = useState(20);
     const [playing, toggle, audioRef] = useAudio(song);
-  
+
+
+
+    function goToPrevious() {
+        audioRef.pause();
+        audioRef.currentTime = 0;
+        playing && audioRef.play(); // autoplay is already in playing
+    }
+
+    function goToNext() {
+        console.log("goToNext")
+
+    }
+
 
     return (
 
         <div className='media-controls'>
             <div className='seek-bar'>
- 
+
                 <TimeInfo
                     audioRef={audioRef}
                     playing={playing}
@@ -54,10 +67,10 @@ export default function MediaControls() {
                         <Pause className='stop' size={40} />}
                 </span>
 
-                <Next className='next' size={40} />
-                <Next className='previous' size={40} />
+                <Next className='next' size={40} onClick={goToNext} />
+                <Next className='previous' size={40} onClick={goToPrevious} />
             </div>
-            <div className='volue-control'>
+            {/* <div className='volue-control'>
                 <div className='volume-slider'>
                     <RangeSlider
                         size='sm'
@@ -68,7 +81,7 @@ export default function MediaControls() {
                         onChange={changeEvent => setVolume(changeEvent.target.value)}
                     />
                 </div>
-            </div>
+            </div> */}
         </div>
 
     )

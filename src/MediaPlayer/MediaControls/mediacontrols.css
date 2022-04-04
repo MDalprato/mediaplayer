@@ -9,7 +9,8 @@
 
 .buttons svg rect,
 polyline,
-polygon, path {
+polygon,
+path {
     stroke: white;
     stroke-width: 0.8px;
 }
@@ -52,15 +53,21 @@ polygon, path {
 .playPause {
     order: 1;
     width: 50px;
+    display: flex;
+    justify-content: center;
 }
 .next {
     order: 2;
     width: 20px;
+    display: flex;
+    justify-content: center;
 }
 .previous {
     width: 20px;
     order: 0;
     transform: rotate(180deg);
+    display: flex;
+    justify-content: center;
 }
 
 .buttons {
@@ -70,12 +77,12 @@ polygon, path {
     padding: 10px;
 }
 
-.volume-slider {
+/* .volume-slider {
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 100% !important;
-}
+} */
 
 input[type="range"] {
     width: 100% !important;
@@ -92,7 +99,7 @@ input[type="range"]::-webkit-slider-thumb {
     height: 15px;
     width: 15px;
     border-radius: 50%;
-    background-color: rgb(255, 255, 255) ;
+    background-color: rgb(255, 255, 255);
     cursor: ew-resize;
     transition: background 0.3s ease-in-out;
 }
