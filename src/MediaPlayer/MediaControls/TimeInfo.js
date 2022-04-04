@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import ProgressBar from "@ramonak/react-progress-bar";
 
+
+function selectTime(){
+    console.log("select")
+}
+
 export const TimeInfo = (props) => {
 
     const [currentTime, setCurrentTime] = useState(0);

@@ -8,8 +8,6 @@ import cover from '../cover.png';
 
 export default function MediaPlayer() {
 
-
-
     return (
         <Blur img={cover} blurRadius={60} enableStyles>
             <div className='media-player'>
